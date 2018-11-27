@@ -4,7 +4,10 @@ cCell::cCell()
 {}
 
 cCell::cCell(int data)
-{}
+{
+    this->data = data;
+    this->next = nullptr;
+}
 
 int cCell::getD()
 {

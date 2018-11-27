@@ -8,7 +8,6 @@ Stack::Stack()
     this->setFirst(nullptr);
 }
 
-
 //ДОБАВЛЕНИЕ ЭЛЕМЕНТА В СПИСОК
 void Stack::push(int data)
 {
@@ -53,6 +52,12 @@ int Stack::getFirstD()
 {
     cCell *first = this->getFirst();
     return first->getD();
+}
+
+bool Stack::isEmpty()
+{
+    if(this->getFirst() == nullptr) return true;
+    return false;
 }
 
 

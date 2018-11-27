@@ -8,7 +8,6 @@ class Stack
 {
 public:
     Stack();
-
     void push(int data);                //добавляет новый элемент, ничего не возвращает
     int pop();                          //удаляет элемент и возвращает его значение
 
@@ -17,6 +16,8 @@ public:
 
     cCell* getFirst();                  //возвращает первую ячейку (поле first)
     void setFirst(cCell *first);        //задает первую ячейку (поле first)
+
+    bool isEmpty();
 
     string getName();
     void setName(string name);

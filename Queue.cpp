@@ -2,7 +2,6 @@
 
 Queue::Queue()
 {
-    //ctor
     this->setLast(nullptr);
 }
 
@@ -25,7 +24,6 @@ void Queue::push(int data)
         this->setFirst(cell);   //новая ячейка - первая
         this->setLast(cell);    //и последняя одновременно
         cell->setNext(nullptr); //пишем нуль-указатель в саму ячейку
-        cout << cell->getD() << "\n";
     }else                       //если очередь не пустая
     {
         last = this->getLast();       //получаем последнюю ячейку
