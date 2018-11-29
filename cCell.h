@@ -8,8 +8,8 @@ public:
     cCell();
     cCell(int data);
 
-    int getD();
-    void setD(int data);
+    int getData();
+    void setData(int data);
 
     cCell* getNext();
     void setNext(cCell *next);

@@ -9,12 +9,12 @@ cCell::cCell(int data)
     this->next = nullptr;
 }
 
-int cCell::getD()
+int cCell::getData()
 {
     return this->data;
 }
 
-void cCell::setD(int data)
+void cCell::setData(int data)
 {
     this->data = data;
 }

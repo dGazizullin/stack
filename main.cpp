@@ -6,35 +6,40 @@ using namespace std;
 
 int main()
 {
+
     Stack *ls = new Stack;
-    //Enumerator *enum_ = new Enumerator(ls);
-    //enum_->atEnd();
+
     cout << "добавляем элементы в стек:";
-    ls->push(1);
-    ls->push(2);
-    ls->push(3);
-    ls->print();
-    cout << "\nполучаем последний элемент стека:   " << ls->getFirstD();
+    ls->cPush(1);
+    ls->cPush(2);
+    ls->cPush(3);
+
+    Enumerator *enum_ = new Enumerator(ls);
+    enum_->printColl();
+    //ls->print();
+    cout << "\nполучаем последний элемент стека:   " << ls->cGetF();
     cout << "\nудаляем элементы стека:\n";
-    cout << ls->pop() << "\n";
-    cout << ls->pop() << "\n";
+    cout << ls->cPop() << "\n";
+    cout << ls->cPop() << "\n";
     cout << "is empty?" << ls->isEmpty() << "\n";
-    cout << ls->pop() << "\n";
-    cout << ls->pop() << "\n";
+    cout << ls->cPop() << "\n";
+    cout << ls->cPop() << "\n";
+
+
     cout << "is empty?" << ls->isEmpty() << "\n\n";
 
     Queue *q = new Queue;
     cout << "добавляем новые элементы в очередь:\n";
-    q->push(1);
-    q->push(2);
-    q->push(3);
-    q->push(4);
+    q->cPush(1);
+    q->cPush(2);
+    q->cPush(3);
+    q->cPush(4);
     q->print();
-    cout << "\nполучаем первый элемент очереди: " << q->getFirstD() << "\nудаляем элементы очереди:\n";
+    cout << "\nполучаем первый элемент очереди: " << q->cGetF() << "\nудаляем элементы очереди:\n";
 
-    cout << "\n" << q->pop() << "\n";
-    cout << q->pop() << "\n";
-    cout << q->pop() << "\n";
-    cout << q->pop() << "\n";
-    cout << q->pop() << "\n";
+    cout << "\n" << q->cPop() << "\n";
+    cout << q->cPop() << "\n";
+    cout << q->cPop() << "\n";
+    cout << q->cPop() << "\n";
+    cout << q->cPop() << "\n";
 }

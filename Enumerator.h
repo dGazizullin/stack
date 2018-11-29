@@ -9,7 +9,7 @@ public:
     Enumerator();
     Enumerator(Stack* coll);
 
-    void printColl(Stack* coll);  //печатает коллекцию
+    void printColl();  //печатает коллекцию
 
     bool atEnd();       //текущий элемент - последний?
 
