@@ -10,8 +10,7 @@ Enumerator::Enumerator(Stack* coll)
     try
     {
         this->coll = coll;
-        this->moveFirst();   //сразу кладем первый элемент коллекции в
-        //поле cur, иначе(если поле пусто) будет seg-fault в atEnd()
+        this->setCurr(nullptr);
     }catch(int e)
     {
         if(!coll->cGetFirst())
@@ -79,13 +78,13 @@ void Enumerator::setCurr(cCell* curr)
 void Enumerator::printColl()
 {
     coll = this->getColl();             //получаем коллекцию
-    if(coll->isEmpty())                //если коллекция не пуста
+    if(!coll->isEmpty())                //если коллекция не пуста
     {
         this->setCurr(coll->cGetFirst());   //устанавливаем текущий указатель на первый элемент
         while(true)                         //апасна!
         {
             cCell* cur = this->getCurr();               //получаем текущую ячейку
-            cout << "\n" <<  cur->getData() << "\n";    //печатаем данные из нее
+            cout <<  cur->getData() << "   ";    //печатаем данные из нее
             if(!this->atEnd()) this->moveNext();        //если ячейка не последняя, перейти к следующей
             else break;                                 //иначе - выйти из цикла
         }

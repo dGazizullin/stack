@@ -7,26 +7,30 @@ using namespace std;
 int main()
 {
 
-    Stack *ls = new Stack;
+    Stack *st = new Stack;
 
     cout << "добавляем элементы в стек:";
-    ls->cPush(1);
-    ls->cPush(2);
-    ls->cPush(3);
+    st->cPush(1);
+    st->cPush(2);
+    st->cPush(3);
 
-    Enumerator *enum_ = new Enumerator(ls);
-    enum_->printColl();
-    //ls->print();
-    cout << "\nполучаем последний элемент стека:   " << ls->cGetF();
+    //напечатаем полученный стек
+    Enumerator *enumSt = new Enumerator(st);
+    enumSt->printColl();
+
+    cout << "\nполучаем последний элемент стека:   " << st->cGetF() << "\n";
+
     cout << "\nудаляем элементы стека:\n";
-    cout << ls->cPop() << "\n";
-    cout << ls->cPop() << "\n";
-    cout << "is empty?" << ls->isEmpty() << "\n";
-    cout << ls->cPop() << "\n";
-    cout << ls->cPop() << "\n";
+    cout << st->cPop() << "\n";
+    cout << st->cPop() << "\n";
+    cout << "is empty? [0/1]" << st->isEmpty() << "\n";
+    cout << st->cPop() << "\n";
+    cout << st->cPop() << "\n";
 
 
-    cout << "is empty?" << ls->isEmpty() << "\n\n";
+    cout << "is empty?" << st->isEmpty() << "\n";
+    enumSt->printColl();
+    cout << "\n\n";
 
     Queue *q = new Queue;
     cout << "добавляем новые элементы в очередь:\n";
@@ -34,12 +38,19 @@ int main()
     q->cPush(2);
     q->cPush(3);
     q->cPush(4);
-    q->print();
+
+    //печатаем полученную очередь
+    Enumerator *enumQ = new Enumerator(q);
+    enumQ->printColl();
+
     cout << "\nполучаем первый элемент очереди: " << q->cGetF() << "\nудаляем элементы очереди:\n";
 
     cout << "\n" << q->cPop() << "\n";
     cout << q->cPop() << "\n";
     cout << q->cPop() << "\n";
+    cout << "is empty? [0/1]" << q->isEmpty() << "\n";
     cout << q->cPop() << "\n";
     cout << q->cPop() << "\n";
+    cout << "is empty? [0/1]" << q->isEmpty() << "\n";
+    enumQ->printColl();
 }
