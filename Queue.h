@@ -3,8 +3,6 @@
 
 #include "Stack.h"
 
-
-
 class Queue : public Stack
 {
 public:

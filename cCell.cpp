@@ -5,8 +5,8 @@ cCell::cCell()
 
 cCell::cCell(int data)
 {
-    this->data = data;
-    this->next = nullptr;
+    this->setData(data);
+    this->setNext(nullptr);
 }
 
 int cCell::getData()

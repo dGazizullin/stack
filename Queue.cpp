@@ -3,6 +3,7 @@
 Queue::Queue()
 {
     this->csetLast(nullptr);
+    this->setName("");
 }
 
 cCell* Queue::cgetLast()
@@ -17,14 +18,14 @@ void Queue::csetLast(cCell *last)
 
 void Queue::cPush(int data)
 {
-    cCell *cell = new cCell;    //создаем новую ячейку
-    cell->setData(data);           //записываем туда данные
-    if (this->isEmpty())  //если очередь пустая
+    cCell *cell = new cCell;        //создаем новую ячейку
+    cell->setData(data);            //записываем туда данные
+    if (this->isEmpty())            //если очередь пустая
     {
         this->cSetFirst(cell);   //новая ячейка - первая
         this->csetLast(cell);    //и последняя одновременно
-        cell->setNext(nullptr); //пишем нуль-указатель в саму ячейку
-    }else                       //если очередь не пустая
+        cell->setNext(nullptr);  //пишем нуль-указатель в саму ячейку
+    }else                        //если очередь не пустая
     {
         last = this->cgetLast();       //получаем последнюю ячейку
         last->setNext(cell);          //предыдущая ячейка теперь указывает на новую

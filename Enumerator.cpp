@@ -1,6 +1,7 @@
 #include "Enumerator.h"
 #include "Stack.h"
 #include "Queue.h"
+#include <typeinfo>
 
 Enumerator::Enumerator()
 {}
@@ -36,6 +37,14 @@ void Enumerator::moveFirst()
 
 void Enumerator::moveLast()
 {
+//нельзя, так как очередь, переданная в коллекцию,
+//записывается в поле типа стек и поэтому
+//обратиться к методу очереди cgetLast() уже не получится
+//    coll = this->getColl();
+//    if(coll->cgetLast())
+//   {
+//        this->setCurr(coll->cgetLast());
+//   }else
     this->moveFirst();
     while(!this->atEnd())
     {
@@ -83,11 +92,15 @@ void Enumerator::printColl()
         this->setCurr(coll->cGetFirst());   //устанавливаем текущий указатель на первый элемент
         while(true)                         //апасна!
         {
-            cCell* cur = this->getCurr();               //получаем текущую ячейку
-            cout <<  cur->getData() << "   ";    //печатаем данные из нее
+            cout <<  this->item() << "   ";    //печатаем данные из текущей ячейки
             if(!this->atEnd()) this->moveNext();        //если ячейка не последняя, перейти к следующей
             else break;                                 //иначе - выйти из цикла
         }
     }else cout << "Collection is empty.";
+}
 
+int Enumerator::item()
+{
+    cCell* cur = this->getCurr();
+    return cur->getData();
 }

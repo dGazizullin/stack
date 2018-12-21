@@ -6,6 +6,7 @@ using namespace std;
 Stack::Stack()
 {
     this->cSetFirst(nullptr);
+    this->setName("");
 }
 
 //ДОБАВЛЕНИЕ ЭЛЕМЕНТА В СПИСОК
@@ -50,8 +51,12 @@ int Stack::cPop()
 
 int Stack::cGetF()
 {
-    cCell *first = this->cGetFirst();
-    return first->getData();
+    if(!this->isEmpty())
+    {
+        cCell *first = this->cGetFirst();
+        return first->getData();
+    }
+
 }
 
 bool Stack::isEmpty()
