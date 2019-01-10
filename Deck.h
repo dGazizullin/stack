@@ -14,7 +14,15 @@ public:
     int cPop();         //то же, что и popLast()
     int popFirst();     //похоже на очередь
     int popLast();      //похоже на стек
+
+    void csetLast(biCell *cell);
+    biCell* cgetLast();
+
+    void cSetFirst(biCell *cell);
+    biCell* cGetFirst();
 private:
+    biCell* last;
+    biCell* first;
 
 };
 

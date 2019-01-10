@@ -7,6 +7,7 @@ class biCell : public cCell
 public:
     biCell();
     biCell(int data);
+
     biCell* getPrev();
     void setPrev(biCell *prev);
 

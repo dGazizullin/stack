@@ -1,5 +1,6 @@
 #include "biCell.h"
 
+
 biCell::biCell(){}
 
 biCell::biCell(int data) : cCell::cCell(data)
@@ -7,12 +8,12 @@ biCell::biCell(int data) : cCell::cCell(data)
     this->setPrev(nullptr);
 }
 
-biCell::getPrev()
+biCell* biCell::getPrev()
 {
     return this->prev;
 }
 
-biCell::setPrev(biCell *prev)
+void biCell::setPrev(biCell *prev)
 {
     this->prev = prev;
 }

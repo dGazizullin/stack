@@ -18,8 +18,7 @@ void Queue::csetLast(cCell *last)
 
 void Queue::cPush(int data)
 {
-    cCell *cell = new cCell;        //создаем новую ячейку
-    cell->setData(data);            //записываем туда данные
+    cCell *cell = new cCell(data);        //создаем новую ячейку
     if (this->isEmpty())            //если очередь пустая
     {
         this->cSetFirst(cell);   //новая ячейка - первая

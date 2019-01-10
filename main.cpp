@@ -1,10 +1,8 @@
 #include <iostream>
-
 #include "Stack.h"
 #include "Queue.h"
 #include "Deck.h"
 #include "Enumerator.h"
-#include "cCell.h"
 #include "biCell.h"
 using namespace std;
 
@@ -60,5 +58,12 @@ int main()
 //    cout << "is empty? [0/1]" << q->isEmpty() << "\n";
 //    enumQ->printColl();
 
-    biCell *c = new biCell(1);
+
+    biCell* cell = new biCell;
+    Deck *d = new Deck;
+
+    d->pushFirst(1);
+    Enumerator *e = new Enumerator(d);
+    e->printColl();
+
 }

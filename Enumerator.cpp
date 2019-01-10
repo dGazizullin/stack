@@ -99,6 +99,21 @@ void Enumerator::printColl()
     }else cout << "Collection is empty.";
 }
 
+void Enumerator::printDeck()
+{
+    coll = this->getColl();             //получаем коллекцию
+    if(!coll->isEmpty())                //если коллекция не пуста
+    {
+        this->setCurr(coll->cGetFirst());   //устанавливаем текущий указатель на первый элемент
+        while(true)                         //апасна!
+        {
+            cout <<  this->item() << "   ";    //печатаем данные из текущей ячейки
+            if(!this->atEnd()) this->moveNext();        //если ячейка не последняя, перейти к следующей
+            else break;                                 //иначе - выйти из цикла
+        }
+    }else cout << "Collection is empty.";
+}
+
 int Enumerator::item()
 {
     cCell* cur = this->getCurr();
