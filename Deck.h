@@ -20,10 +20,12 @@ public:
 
     void cSetFirst(biCell *cell);
     biCell* cGetFirst();
+    void neTrogay();
+
+	bool isEmpty();
 private:
     biCell* last;
     biCell* first;
-
 };
 
 

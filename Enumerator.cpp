@@ -1,6 +1,7 @@
 #include "Enumerator.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "Deck.h"
 #include <typeinfo>
 
 Enumerator::Enumerator()
@@ -11,12 +12,17 @@ Enumerator::Enumerator(Stack* coll)
     try
     {
         this->coll = coll;
-        this->setCurr(nullptr);
+        this->setCurr(coll->cGetFirst());
     }catch(int e)
     {
         if(!coll->cGetFirst())
             throw ("No data in collection.");
     }
+}
+
+Enumerator::Enumerator(Deck* coll)
+{
+    coll->neTrogay();
 }
 
 void Enumerator::moveNext()
@@ -37,14 +43,6 @@ void Enumerator::moveFirst()
 
 void Enumerator::moveLast()
 {
-//нельзя, так как очередь, переданная в коллекцию,
-//записывается в поле типа стек и поэтому
-//обратиться к методу очереди cgetLast() уже не получится
-//    coll = this->getColl();
-//    if(coll->cgetLast())
-//   {
-//        this->setCurr(coll->cgetLast());
-//   }else
     this->moveFirst();
     while(!this->atEnd())
     {
@@ -99,20 +97,6 @@ void Enumerator::printColl()
     }else cout << "Collection is empty.";
 }
 
-void Enumerator::printDeck()
-{
-    coll = this->getColl();             //получаем коллекцию
-    if(!coll->isEmpty())                //если коллекция не пуста
-    {
-        this->setCurr(coll->cGetFirst());   //устанавливаем текущий указатель на первый элемент
-        while(true)                         //апасна!
-        {
-            cout <<  this->item() << "   ";    //печатаем данные из текущей ячейки
-            if(!this->atEnd()) this->moveNext();        //если ячейка не последняя, перейти к следующей
-            else break;                                 //иначе - выйти из цикла
-        }
-    }else cout << "Collection is empty.";
-}
 
 int Enumerator::item()
 {

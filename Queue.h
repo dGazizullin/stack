@@ -14,7 +14,7 @@ public:
     void cPush(int data);            //добавляет новую ячейку в конец очереди
     int cPop();                      //удаляет ячейку из начала очереди, возвращает её значение
 
-    bool isEmpty();
+    virtual	bool isEmpty();
 
 private:
     cCell *last;

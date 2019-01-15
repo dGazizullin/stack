@@ -65,18 +65,6 @@ bool Stack::isEmpty()
     return false;
 }
 
-
-//печатает стек(очередь) сверху(спереди)
-//void Stack::print()
-//{
-//    cCell* cur = this->cGetFirst();
-//    while(cur)
-//    {
-//        cout << "\n" << cur->getData();
-//        cur = cur->getNext();
-//    }
-//}
-
 cCell* Stack::cGetFirst()
 {
     return this->first;

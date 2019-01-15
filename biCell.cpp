@@ -17,3 +17,14 @@ void biCell::setPrev(biCell *prev)
 {
     this->prev = prev;
 }
+
+biCell* biCell::getNext()
+{
+	return this->next;
+}
+
+void biCell::setNext(biCell *next)
+{
+	this->next = next;
+}
+
